@@ -1,11 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Roboto, sans-serif;
   margin: 0;
   background: #f6f7fb;
 }
 
 .header {
-  background: #6c4cff;
+  background: #D63e9a;
   color: white;
   padding: 16px 32px;
 }
@@ -13,7 +13,7 @@ body {
 .layout {
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: 32px;
+  gap: 35px;
   padding: 32px;
 }
 
@@ -45,12 +45,14 @@ textarea {
 .serp-title {
   color: #1a0dab;
   font-size: 20px;
-  margin: 4px 0;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .serp-desc {
-  color: #545454;
+  color: #4d5156;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .good {
