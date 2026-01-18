@@ -53,6 +53,8 @@ textarea {
   color: #4d5156;
   font-size: 14px;
   font-weight: 400;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .good {

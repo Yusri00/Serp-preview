@@ -1,11 +1,4 @@
-const TITLE_LIMIT = 60;
-const META_LIMIT = 160;
-
-const getStatus = (value, limit) => {
-if (value.length <= limit * 0.8) return "good";
-if (value.length <= limit) return "warn";
-return "bad";
-};
+import { getTextWidth, getStatus, TITLE_PIXEL_LIMIT, META_PIXEL_LIMIT, titleFont, descFont} from "./textUtils";
 
 export default function InputFields({
 url,
@@ -26,11 +19,9 @@ setDescription,
     />
 
 
-    <label>
-      Titel
-      <span className={getStatus(title, TITLE_LIMIT)}>
-        {" "}
-        ({title.length}/{TITLE_LIMIT})
+    <label>Titel
+      <span className={getStatus(title, TITLE_PIXEL_LIMIT, titleFont)}>
+          ({Math.round(getTextWidth(title, titleFont))}/{TITLE_PIXEL_LIMIT}px)
       </span>
     </label>
     <input
@@ -41,10 +32,9 @@ setDescription,
 
 
     <label>
-      Meta description
-      <span className={getStatus(description, META_LIMIT)}>
-        {" "}
-        ({description.length}/{META_LIMIT})
+      Meta beskrivning
+      <span className={getStatus(description, META_PIXEL_LIMIT, descFont)}>
+        ({Math.round(getTextWidth(description, descFont))}/{META_PIXEL_LIMIT}px)
       </span>
     </label>
     <textarea

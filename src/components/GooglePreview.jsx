@@ -1,27 +1,18 @@
-const truncate = (text, limit) =>
-  text.length > limit ? text.slice(0, limit) + "…" : text;
+import { truncateByPixels, TITLE_PIXEL_LIMIT, META_PIXEL_LIMIT, titleFont, descFont } from "./textUtils";
 
-export default function GooglePreview({
-  url,
-  title,
-  description,
-}) {
+export default function GooglePreview({url, title, description }) {
+
   return (
     <div className="preview">
-      <div className="serp-url">
-        {url || "www.exempel.se"}
+      <div className="serp-url">{url || "www.exempel.se"}
       </div>
 
-      <div className="serp-title">
-        {truncate(title || "Din SEO-titel visas här", 60)}
+      <div className="serp-title"> 
+        {truncateByPixels(title || "Din SEO-titel visas här", TITLE_PIXEL_LIMIT, titleFont)}
       </div>
 
       <div className="serp-desc">
-        {truncate(
-          description ||
-            "Här visas din metabeskrivning precis som i Google.",
-          160
-        )}
+        {truncateByPixels(description || "Här visas din metabeskrivning", META_PIXEL_LIMIT, descFont)}
       </div>
     </div>
   );
