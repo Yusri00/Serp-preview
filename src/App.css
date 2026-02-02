@@ -12,7 +12,7 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: 35px;
   padding: 32px;
 }
@@ -20,14 +20,35 @@ body {
 .inputs {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  padding: 24px;
+  background: #ffffff; /* ljus bakgrund för inputs */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 input,
 textarea {
-  padding: 8px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fafafa;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #d63e9a;
+  box-shadow: 0 0 0 2px rgba(214, 62, 154, 0.15);
+  outline: none;
+}
+
+.serp-wrapper {
+  display: flex;
+  gap: 35px;
 }
 
 .serp-canvas {
