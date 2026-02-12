@@ -11,7 +11,7 @@ setDescription,
 
   return (
   <div className="inputs">
-    <h2 className="inputs-title">SEO Input</h2>
+    <h2 className="inputs-title">Fyll i företagets information</h2>
 
     <div className="field">
       <label htmlFor="url">URL</label>
@@ -57,5 +57,4 @@ setDescription,
   </div>
 );
 }
-
 
