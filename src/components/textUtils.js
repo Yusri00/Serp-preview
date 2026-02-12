@@ -3,8 +3,8 @@ export const TITLE_PIXEL_LIMIT = 550;
 export const META_PIXEL_LIMIT = 900;
 
 // Font-strängar som matchar CSS
-export const titleFont = "500 20px Arial, Roboto, sans-serif";
-export const descFont = "400 14px Arial, Roboto, sans-serif";
+export const titleFont = "500 24px Arial, Roboto, sans-serif";
+export const descFont = "400 17px Arial, Roboto, sans-serif";
 
 // Mäter textens bredd i pixlar med Canvas API
 export const getTextWidth = (text, font) => {
@@ -26,11 +26,12 @@ export const getStatus = (value, pixelLimit, font) => {
 // Trunkerar text så att den ryms i en viss pixelbredd och lägger till "…"
 export const truncateByPixels = (text, pixelLimit, font) => {
   if (!text) return text;
+  if (getTextWidth(text, font) <= pixelLimit) return text;
 
   let truncated = text;
 
   // Klipp bort sista tecken tills text + ellipsis ryms
-  while (getTextWidth(truncated + "…", font) > pixelLimit) {
+  while (truncated && getTextWidth(truncated + "…", font) > pixelLimit) {
     truncated = truncated.slice(0, -1);
   }
 

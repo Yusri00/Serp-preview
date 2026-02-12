@@ -3,6 +3,7 @@ import { truncateByPixels, TITLE_PIXEL_LIMIT, META_PIXEL_LIMIT, titleFont, descF
 import googleLogo from "../assets/google-logo.svg"; 
 
 export default function GooglePreview({url, title, description }) {
+  const noResultBlocks = [1, 2];
 
   return (
   <div className="serp-canvas">
@@ -38,7 +39,23 @@ export default function GooglePreview({url, title, description }) {
       </div>
       <div className="serp-desc">
         {truncateByPixels(description || "Här visas din metabeskrivning", META_PIXEL_LIMIT, descFont)}
-        </div>
+      </div>
+
+      <div className="result-blocks">
+        {noResultBlocks.map((item) => (
+          <div className="result-block" key={item}>
+            <div className="result-block-head">
+              <div className="result-block-dot" />
+              <div className="result-block-lines">
+                <div className="result-block-line result-block-line-short" />
+                <div className="result-block-line result-block-line-thin" />
+              </div>
+            </div>
+            <div className="result-block-line result-block-line-pink" />
+            <div className="result-block-line result-block-line-box" />
+          </div>
+        ))}
+      </div>
       </div>
     </div>
     

@@ -11,40 +11,51 @@ setDescription,
 
   return (
   <div className="inputs">
-    <label>URL</label>
-    <input
-      value={url}
-      onChange={(e) => setUrl(e.target.value)}
-      placeholder="https://exempel.se/sida"
-    />
+    <h2 className="inputs-title">SEO Input</h2>
 
+    <div className="field">
+      <label htmlFor="url">URL</label>
+      <input
+        id="url"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        placeholder="https://exempel.se/sida"
+      />
+      <p className="field-help">Ange sidan du vill förhandsgranska.</p>
+    </div>
 
-    <label>Titel
-      <span className={getStatus(title, TITLE_PIXEL_LIMIT, titleFont)}>
-          ({Math.round(getTextWidth(title, titleFont))}/{TITLE_PIXEL_LIMIT}px)
-      </span>
-    </label>
-    <input
-      value={title}
-      onChange={(e) => setTitle(e.target.value)}
-      placeholder="SEO-titel"
-    />
+    <div className="field">
+      <label className="field-label" htmlFor="title">
+        <span>Titel</span>
+        <span className={getStatus(title, TITLE_PIXEL_LIMIT, titleFont)}>
+          {Math.round(getTextWidth(title, titleFont))}/{TITLE_PIXEL_LIMIT}px
+        </span>
+      </label>
+      <input
+        id="title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="SEO-titel"
+      />
+    </div>
 
-
-    <label>
-      Meta beskrivning
-      <span className={getStatus(description, META_PIXEL_LIMIT, descFont)}>
-        ({Math.round(getTextWidth(description, descFont))}/{META_PIXEL_LIMIT}px)
-      </span>
-    </label>
-    <textarea
-      value={description}
-      onChange={(e) => setDescription(e.target.value)}
-      placeholder="Meta description"
-    />
+    <div className="field">
+      <label className="field-label" htmlFor="description">
+        <span>Meta beskrivning</span>
+        <span className={getStatus(description, META_PIXEL_LIMIT, descFont)}>
+          {Math.round(getTextWidth(description, descFont))}/{META_PIXEL_LIMIT}px
+        </span>
+      </label>
+      <textarea
+        id="description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Meta description"
+        rows={4}
+      />
+    </div>
   </div>
 );
 }
-
 
 
