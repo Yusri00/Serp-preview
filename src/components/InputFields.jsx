@@ -41,7 +41,7 @@ setDescription,
 
     <div className="field">
       <label className="field-label" htmlFor="description">
-        <span>Meta beskrivning</span>
+        <span>Metabeskrivning</span>
         <span className={getStatus(description, META_PIXEL_LIMIT, descFont)}>
           {Math.round(getTextWidth(description, descFont))}/{META_PIXEL_LIMIT}px
         </span>
