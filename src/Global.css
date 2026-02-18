@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, Roboto, sans-serif;
+  margin: 0;
+  background: #f6f7fb;
+}
+
+.header {
+  background: #D63e9a;
+  color: white;
+  padding: 50px 42px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.kinesso-logo {
+  width: 150px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.header-copy {
+  text-align: center;
+}
+
+.header-copy h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header-copy p {
+  margin: 6px 0 0;
+}
+
+.header-spacer {
+  width: 150px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 35px;
+  padding: 32px;
+}

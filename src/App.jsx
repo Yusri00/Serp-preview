@@ -5,6 +5,7 @@ import GooglePreview from "./components/GooglePreview.jsx";
 
 export default function App() {
   const [url, setUrl] = useState("");
+  const [siteName, setSiteName] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -15,15 +16,18 @@ export default function App() {
       <main className="layout">
         <InputFields
           url={url}
+          siteName={siteName}
           title={title}
           description={description}
           setUrl={setUrl}
+          setSiteName={setSiteName}
           setTitle={setTitle}
           setDescription={setDescription}
         />
 
         <GooglePreview
           url={url}
+          siteName={siteName}
           title={title}
           description={description}
         />

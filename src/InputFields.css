@@ -1,0 +1,106 @@
+/* Inputs container */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px;
+  margin-top: 22px;
+  background: #ffffff;
+  border: 1px solid #ececf2;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.inputs-title {
+  margin: 0 0 4px;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.field-help {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Inputs och textareas */
+input,
+textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d8dbe2;
+  font-size: 15px;
+  color: #111827;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fcfcfe;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.title-input {
+  min-height: 72px;
+}
+
+/* Warning-text */
+.title-warning-text,
+.meta-warning-text {
+  color: #d93025;
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fokus på input och textarea */
+input:focus,
+textarea:focus {
+  border-color: #d63e9a;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(214, 62, 154, 0.15);
+  outline: none;
+}
+
+/* Statusfärger */
+.good {
+  color: #2ecc71;
+}
+
+.warn {
+  color: #f1c40f;
+}
+
+.bad {
+  color: #e74c3c;
+}

@@ -1,7 +1,10 @@
 import { getTextWidth, getStatus, TITLE_PIXEL_LIMIT, META_PIXEL_LIMIT, titleFont, descFont} from "./textUtils";
+import '../InputFields.css';
+
 
 export default function InputFields({
 url,
+siteName,
 title,
 description,
 setUrl,
@@ -31,6 +34,20 @@ setDescription,
       />
       <p className="field-help">Ange sidan du vill förhandsgranska.</p>
     </div>
+
+    <div className="field">
+      <label className="field-label" htmlFor="sitename">
+        <span>Webbplatsnamn</span>
+        </label>
+
+      <input
+        id="sitename"
+        value={siteName}
+        onChange={(e) => setSiteName(e.target.value)}
+        placeholder="Exempel: Mitt Företag"
+      />
+      <p className="field-help">Ange det namn som ska visas på webbplatsen.</p>
+    </div>  
 
     <div className="field">
       <label className="field-label" htmlFor="title">
