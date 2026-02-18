@@ -1,4 +1,4 @@
-import kinessoLogo from "../assets/kinesso-white.png";
+import kinessoLogo from "../assets/kinesso.svg";
 
 export default function Header() {
   return (
