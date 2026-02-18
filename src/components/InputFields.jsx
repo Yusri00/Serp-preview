@@ -8,6 +8,7 @@ siteName,
 title,
 description,
 setUrl,
+setSiteName,
 setTitle,
 setDescription,
 }) {
@@ -36,12 +37,12 @@ setDescription,
     </div>
 
     <div className="field">
-      <label className="field-label" htmlFor="sitename">
+      <label className="field-label" htmlFor="siteName">
         <span>Webbplatsnamn</span>
         </label>
 
       <input
-        id="sitename"
+        id="siteName"
         value={siteName}
         onChange={(e) => setSiteName(e.target.value)}
         placeholder="Exempel: Mitt Företag"

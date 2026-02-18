@@ -77,6 +77,10 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+.site-name {
+  color: #5f6368; 
+  font-weight: 600;
+}
 .serp-url {
   color: #006621;
   font-size: 16px;
