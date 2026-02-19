@@ -35,11 +35,12 @@ setDescription,
         onChange={(e) => setSiteName(e.target.value)}
         placeholder="Exempel: Mitt Företag"
       />
-      <p className="field-help">Ange det namn som ska visas i sökresultatet.</p>
     </div>
 
     <div className="field">
-      <label htmlFor="url">URL</label>
+      <label className="field-label" htmlFor="url">
+        <span>URL</span>
+      </label>
       <input
         id="url"
         value={url}
@@ -52,7 +53,7 @@ setDescription,
     <div className="field">
       <label className="field-label" htmlFor="title">
         <span>Titel</span>
-        <span className={titleData.status}>
+        <span className={`counter-badge ${titleData.status}`}>
           {titleData.pixels}/{TITLE_PIXEL_LIMIT}px
         </span>
       </label>
@@ -67,7 +68,7 @@ setDescription,
 
       {titleData.status === "bad" && (
         <p className="title-warning-text">
-          Titeln är för lång och kommer inte att visas helt i <br></br>Googles sökresultat.
+          Titeln är för lång och kommer inte att visas helt i Googles sökresultat.
         </p>
       )}
     </div>
@@ -75,7 +76,7 @@ setDescription,
     <div className="field">
       <label className="field-label" htmlFor="description">
         <span>Metabeskrivning</span>
-        <span className={metaData.status}>
+        <span className={`counter-badge ${metaData.status}`}>
         {metaData.pixels}/{META_PIXEL_LIMIT}px
         </span>
       </label>
@@ -89,7 +90,7 @@ setDescription,
 
       {metaData.status === "bad" && (
         <p className="meta-warning-text">
-          Metabeskrivningen är för lång och kan kapas i <br></br>Googles sökresultat.
+          Metabeskrivningen är för lång och kan kapas i Googles sökresultat.
         </p>
       )}
     </div>
