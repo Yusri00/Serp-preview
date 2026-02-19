@@ -78,12 +78,14 @@
 }
 
 .site-name {
-  color: #5f6368; 
-  font-weight: 500;
+  color: #202124;
+  font-size: 14px;
+  font-weight: 400;
 }
 .serp-url {
-  color: #006621;
-  font-size: 16px;
+  color: #4d5156;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .serp-title {
