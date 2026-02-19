@@ -26,6 +26,19 @@ setDescription,
     <h2 className="inputs-title">Fyll i webbplatsens information</h2>
 
     <div className="field">
+      <label className="field-label" htmlFor="siteName">
+        <span>Webbplatsnamn</span>
+      </label>
+      <input
+        id="siteName"
+        value={siteName}
+        onChange={(e) => setSiteName(e.target.value)}
+        placeholder="Exempel: Mitt Företag"
+      />
+      <p className="field-help">Ange det namn som ska visas i sökresultatet.</p>
+    </div>
+
+    <div className="field">
       <label htmlFor="url">URL</label>
       <input
         id="url"
@@ -35,20 +48,6 @@ setDescription,
       />
       <p className="field-help">Ange sidan du vill förhandsgranska.</p>
     </div>
-
-    <div className="field">
-      <label className="field-label" htmlFor="siteName">
-        <span>Webbplatsnamn</span>
-        </label>
-
-      <input
-        id="siteName"
-        value={siteName}
-        onChange={(e) => setSiteName(e.target.value)}
-        placeholder="Exempel: Mitt Företag"
-      />
-      <p className="field-help">Ange det namn som ska visas på webbplatsen.</p>
-    </div>  
 
     <div className="field">
       <label className="field-label" htmlFor="title">

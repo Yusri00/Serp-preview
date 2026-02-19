@@ -3,8 +3,8 @@ export const TITLE_PIXEL_LIMIT = 550;
 export const META_PIXEL_LIMIT = 900;
 
 // Font-strängar som matchar CSS
-export const titleFont = "500 24px Arial, Roboto, sans-serif";
-export const descFont = "400 17px Arial, Roboto, sans-serif";
+export const titleFont = "500 22px Arial, Roboto, sans-serif";
+export const descFont = "400 15px Arial, Roboto, sans-serif";
 
 // Mäter textens bredd i pixlar med Canvas API
 export const getTextWidth = (text, font) => {
