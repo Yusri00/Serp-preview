@@ -44,7 +44,16 @@ body {
   padding: 32px;
 }
 
+.layout > * {
+  min-width: 0;
+}
+
 @media (max-width: 1024px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .header {
     padding: 30px 20px;
     grid-template-columns: auto 1fr auto;
@@ -86,7 +95,7 @@ body {
   }
 
   .header-copy h1 {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.2;
     white-space: nowrap;
   }

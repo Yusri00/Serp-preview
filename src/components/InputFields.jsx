@@ -1,4 +1,13 @@
-import { getTextWidth, getStatus, TITLE_PIXEL_LIMIT, META_PIXEL_LIMIT, titleFont, descFont} from "./textUtils";
+import { useEffect, useState } from "react";
+import {
+  getTextWidth,
+  getStatus,
+  truncateByPixels,
+  TITLE_PIXEL_LIMIT,
+  META_PIXEL_LIMIT,
+  titleFont,
+  descFont,
+} from "./textUtils";
 import '../InputFields.css';
 
 
@@ -12,6 +21,8 @@ setSiteName,
 setTitle,
 setDescription,
 }) {
+  const [mobileStickyBottom, setMobileStickyBottom] = useState(12);
+
   const titleData = {
     chars: title.length,
     pixels: Math.round(getTextWidth(title, titleFont)),
@@ -22,6 +33,32 @@ setDescription,
     pixels: Math.round(getTextWidth(description, descFont)),
     status: getStatus(description, META_PIXEL_LIMIT, descFont),
   };
+  const liveTitle = truncateByPixels(
+    title || "Din SEO-titel visas här",
+    TITLE_PIXEL_LIMIT,
+    titleFont
+  );
+
+  useEffect(() => {
+    if (!window.visualViewport) return;
+
+    const updateMobileStickyBottom = () => {
+      const vv = window.visualViewport;
+      const keyboardHeight = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      setMobileStickyBottom(12 + keyboardHeight);
+    };
+
+    updateMobileStickyBottom();
+    window.visualViewport.addEventListener("resize", updateMobileStickyBottom);
+    window.visualViewport.addEventListener("scroll", updateMobileStickyBottom);
+    window.addEventListener("resize", updateMobileStickyBottom);
+
+    return () => {
+      window.visualViewport.removeEventListener("resize", updateMobileStickyBottom);
+      window.visualViewport.removeEventListener("scroll", updateMobileStickyBottom);
+      window.removeEventListener("resize", updateMobileStickyBottom);
+    };
+  }, []);
 
   return (
   <div className="inputs">
@@ -98,6 +135,14 @@ setDescription,
           Metabeskrivningen är för lång och kan kapas i Googles sökresultat.
         </p>
       )}
+    </div>
+
+    <div
+      className="mobile-live-title"
+      style={{ "--mobile-live-bottom": `${mobileStickyBottom}px` }}
+    >
+      <span className="mobile-live-label">Titel i Google</span>
+      <span className="mobile-live-text">{liveTitle}</span>
     </div>
   </div>
   );
