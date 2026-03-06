@@ -175,3 +175,62 @@
   max-width: 100%;
   height: 56px;
 }
+
+@media (max-width: 1024px) {
+  .serp-canvas {
+    padding: 12px 0;
+    border-radius: 12px;
+  }
+
+  .google-serp {
+    border-radius: 12px;
+  }
+
+  .google-header {
+    gap: 12px;
+    padding: 14px 16px 8px;
+  }
+
+  .google-logo {
+    height: 24px;
+  }
+
+  .google-searchbar {
+    height: 38px;
+    font-size: 14px;
+    max-width: none;
+  }
+
+  .google-nav {
+    gap: 14px;
+    padding: 0 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .results {
+    padding: 16px;
+  }
+
+  .serp-title {
+    font-size: 20px;
+  }
+
+  .serp-desc {
+    max-width: 100%;
+  }
+
+  .result-block-line-short,
+  .result-block-line-thin {
+    width: 180px;
+  }
+
+  .result-block-line-pink {
+    width: 260px;
+  }
+
+  .result-block-line-box {
+    width: 100%;
+    height: 52px;
+  }
+}

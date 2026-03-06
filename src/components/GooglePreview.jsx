@@ -4,6 +4,13 @@ import '../GooglePreview.css';
 
 export default function GooglePreview({url, siteName, title, description }) {
   const noResultBlocks = [1, 2];
+  const previewTitle = truncateByPixels(
+    title || "Din SEO-titel visas här",
+    TITLE_PIXEL_LIMIT,
+    titleFont
+  );
+  const previewSite = siteName || "Exempel";
+  const previewUrl = url || "www.exempel.se";
 
   return (
   <div className="serp-canvas">
@@ -32,12 +39,12 @@ export default function GooglePreview({url, siteName, title, description }) {
   {/* RESULT */} 
   <div className="results">
     <div className="preview-box">
-      <div className="site-name">{siteName || "Exempel"}
+      <div className="site-name">{previewSite}
       </div>
-      <div className="serp-url">{url || "www.exempel.se"}
+      <div className="serp-url">{previewUrl}
       </div>
       <div className="serp-title"> 
-        {truncateByPixels(title || "Din SEO-titel visas här", TITLE_PIXEL_LIMIT, titleFont)}
+        {previewTitle}
       </div>
       <div className="serp-desc">
         {truncateByPixels(description || "Här visas din metabeskrivning", META_PIXEL_LIMIT, descFont)}
@@ -60,7 +67,6 @@ export default function GooglePreview({url, siteName, title, description }) {
       </div>
       </div>
     </div>
-    
   </div>
 </div>
   );

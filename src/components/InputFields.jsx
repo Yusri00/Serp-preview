@@ -13,10 +13,12 @@ setTitle,
 setDescription,
 }) {
   const titleData = {
+    chars: title.length,
     pixels: Math.round(getTextWidth(title, titleFont)),
     status: getStatus(title, TITLE_PIXEL_LIMIT, titleFont),
   };
   const metaData = {
+    chars: description.length,
     pixels: Math.round(getTextWidth(description, descFont)),
     status: getStatus(description, META_PIXEL_LIMIT, descFont),
   };
@@ -24,6 +26,9 @@ setDescription,
   return (
   <div className="inputs">
     <h2 className="inputs-title">Fyll i webbplatsens information</h2>
+    <p className="pixel-note">
+      Google klipper text baserat på pixelbredd. Teckenräknaren är endast vägledning.
+    </p>
 
     <div className="field">
       <label className="field-label" htmlFor="siteName">
@@ -54,7 +59,7 @@ setDescription,
       <label className="field-label" htmlFor="title">
         <span>Titel</span>
         <span className={`counter-badge ${titleData.status}`}>
-          {titleData.pixels}/{TITLE_PIXEL_LIMIT}px
+          {titleData.chars} tecken • {titleData.pixels}/{TITLE_PIXEL_LIMIT}px
         </span>
       </label>
 
@@ -77,7 +82,7 @@ setDescription,
       <label className="field-label" htmlFor="description">
         <span>Metabeskrivning</span>
         <span className={`counter-badge ${metaData.status}`}>
-        {metaData.pixels}/{META_PIXEL_LIMIT}px
+        {metaData.chars} tecken • {metaData.pixels}/{META_PIXEL_LIMIT}px
         </span>
       </label>
 
