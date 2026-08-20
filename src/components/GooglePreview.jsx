@@ -60,7 +60,7 @@ export default function GooglePreview({url, siteName, title, description }) {
                 <div className="result-block-line result-block-line-thin" />
               </div>
             </div>
-            <div className="result-block-line result-block-line-pink" />
+            <div className="result-block-line result-block-line-green" />
             <div className="result-block-line result-block-line-box" />
           </div>
         ))}

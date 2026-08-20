@@ -3,25 +3,32 @@ body {
   margin: 0;
   background: #f6f7fb;
 }
-
 .header {
-  background: #D63e9a;
+  background: #1ea397;
   color: white;
   padding: 50px 42px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
 }
 
-.kinesso-logo {
-  width: 150px;
-  height: 60px;
+.transact-logo {
+  position: absolute;
+  left: 40px;
+  width: 160px;
+  height: auto;
   object-fit: contain;
 }
 
+.header-copy h1,
+.header-copy p {
+  position: relative;
+  left: 80px;
+}
 .header-copy {
   text-align: center;
+  width: 100%;
 }
 
 .header-copy h1 {
@@ -56,12 +63,11 @@ body {
 
   .header {
     padding: 30px 20px;
-    grid-template-columns: auto 1fr auto;
   }
 
-  .kinesso-logo {
-    width: 120px;
-    height: 48px;
+  .transact-logo {
+    width: 150px;
+    height: 60px;
   }
 
   .header-copy h1 {
@@ -87,27 +93,42 @@ body {
   .header {
     padding: 18px 14px;
     gap: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
   }
 
-  .kinesso-logo {
+  .transact-logo {
+    position: static;
     width: 80px;
-    height: 34px;
+    height: auto;
+    object-fit: contain;
   }
+
+  .header-copy {
+    text-align: center;
+    margin-left: -30px;
+  }
+  
+  .header-copy h1,
+  .header-copy p {
+    left: 0;
+}
 
   .header-copy h1 {
     font-size: 17px;
     line-height: 1.2;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .header-copy p {
-    margin-top: 2px;
+    margin-top: 6px;
     font-size: 11px;
     line-height: 1.25;
-    opacity: 0.9;
+    opacity: 1;
   }
 
   .header-spacer {
-    width: 88px;
+    display: none;
   }
 }

@@ -116,10 +116,11 @@ textarea::placeholder {
 /* Fokus på input och textarea */
 input:focus,
 textarea:focus {
-  border-color: #d63e9a;
+  border-color: #1ea397;
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(214, 62, 154, 0.15);
+  box-shadow: 0 0 0 3px rgba(30, 163, 151, 0.15);
   outline: none;
+  transition: all 0.2s ease;
 }
 
 /* Statusfärger */

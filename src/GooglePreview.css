@@ -96,7 +96,7 @@
 
 .serp-title {
   color: #1a0dab;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.4;
   margin: 4px 0 6px;
@@ -166,10 +166,10 @@
   height: 14px;
 }
 
-.result-block-line-pink {
+.result-block-line-green {
   width: 320px;
   height: 24px;
-  background: #d63e9a;
+  background: #0a8b81;
   opacity: 0.25;
 }
 
@@ -224,7 +224,7 @@
   }
 
   .serp-title {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .serp-desc {
