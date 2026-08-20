@@ -8,7 +8,7 @@
   background: #ffffff;
   border: 1px solid #e8ebf2;
   border-radius: 16px;
-  box-shadow: 0 12px 28px rgba(17,24,39,0.08);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
   box-sizing: border-box;
   min-width: 0;
 }
@@ -34,12 +34,11 @@
   flex-direction: column;
   gap: 9px;
   min-width: 0;
-  overflow-x: hidden;
 }
 
 .field label {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   color: #1f2937;
 }
 
@@ -69,9 +68,9 @@
 /* Inputs och textareas */
 input,
 textarea {
-  padding: 12px 13px;
-  border-radius: 12px;
-  border: 1px solid #cfd5e2;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid #d8dde7;
   font-size: 16px;
   line-height: 1.4;
   color: #111827;
@@ -80,7 +79,9 @@ textarea {
   min-width: 0;
   box-sizing: border-box;
   background: #ffffff;
-  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease,
+              background-color 0.2s ease;
 }
 
 textarea {
@@ -120,7 +121,6 @@ textarea:focus {
   background: #fff;
   box-shadow: 0 0 0 3px rgba(30, 163, 151, 0.15);
   outline: none;
-  transition: all 0.2s ease;
 }
 
 /* Statusfärger */
