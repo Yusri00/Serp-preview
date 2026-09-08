@@ -67,32 +67,7 @@ setDescription,
       Google klipper text baserat på pixelbredd. Teckenräknaren är endast vägledning.
     </p>
 
-    <div className="field">
-      <label className="field-label" htmlFor="siteName">
-        <span>Webbplatsnamn</span>
-      </label>
-      <input
-        id="siteName"
-        value={siteName}
-        onChange={(e) => setSiteName(e.target.value)}
-        placeholder="Exempel: Mitt Företag"
-      />
-    </div>
-
-    <div className="field">
-      <label className="field-label" htmlFor="url">
-        <span>URL</span>
-      </label>
-      <input
-        id="url"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        placeholder="https://exempel.se/sida"
-      />
-      <p className="field-help">Ange sidan du vill förhandsgranska.</p>
-    </div>
-
-    <div className="field">
+<div className="field">
       <label className="field-label" htmlFor="title">
         <span>Titel</span>
         <span className={`counter-badge ${titleData.status}`}>
@@ -135,6 +110,31 @@ setDescription,
           Metabeskrivningen är för lång och kan kapas i Googles sökresultat.
         </p>
       )}
+    </div>
+
+    <div className="field">
+      <label className="field-label" htmlFor="siteName">
+        <span>Webbplatsnamn</span>
+      </label>
+      <input
+        id="siteName"
+        value={siteName}
+        onChange={(e) => setSiteName(e.target.value)}
+        placeholder="Exempel: Mitt Företag"
+      />
+    </div>
+
+    <div className="field">
+      <label className="field-label" htmlFor="url">
+        <span>URL</span>
+      </label>
+      <input
+        id="url"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        placeholder="https://exempel.se/sida"
+      />
+      <p className="field-help">Ange sidan du vill förhandsgranska.</p>
     </div>
 
     <div
